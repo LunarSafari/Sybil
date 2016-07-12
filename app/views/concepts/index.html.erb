@@ -1,7 +1,9 @@
 <ul>
 	<% @concepts.each do |concept| %>
 		<li>
-			<%= concept.name %>
+			<%= link_to concept.name, concept_path(concept) %>
 		</li>
 	<% end %>
 </ul>
+
+<%= link_to 'New', new_concept_path %>

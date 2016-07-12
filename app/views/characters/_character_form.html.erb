@@ -1,0 +1,18 @@
+<%= form_for @character do |f| %>
+	<div>
+		<%= f.label :name %>:
+		<%= f.text_field :name %>
+	</div>
+
+	<div>
+		<%= f.label :brief %>:
+		<%= f.text_field :brief %>
+	</div>
+
+	<div>
+		<%= f.label :description %>:
+		<%= f.text_area :description %>
+	</div>
+
+	<%= f.submit %>
+<% end %>
