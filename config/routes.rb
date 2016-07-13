@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :perspectives
   end
 
+  resources :perspectives
+
   resources :concepts
 end

@@ -1,6 +1,6 @@
 class Perspective < ApplicationRecord
   belongs_to :character
-  belongs_to :concepts
+  belongs_to :concept
 end
 
 # == Schema Information

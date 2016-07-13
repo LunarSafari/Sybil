@@ -3,4 +3,6 @@
 
 Todo:
 
-<%= @todos %>
+<% @questions.each do |q| %>
+	<%= render_question q %>
+<% end %>

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @todos = get_todos.map{|t| todo_text(*t)}
+    @questions = get_todos.map{|character, concept| Question.new :perspective, character:character, concept: concept }
   end
 
   private
@@ -19,10 +19,6 @@ class HomeController < ApplicationController
           [character, concept]
         end
       end.inject(:concat)
-    end
-
-    def todo_text character, concept
-      "What is #{character.name}'s perspective of #{concept.name}?"
     end
 
 end
