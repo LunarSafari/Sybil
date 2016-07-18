@@ -1,8 +1,5 @@
-<%= link_to 'Characters', characters_path %>
-<%= link_to 'Concepts', concepts_path %>
-
 Todo:
 
-<% @questions.each do |q| %>
-	<%= render_question q %>
+<% @prompts.each do |p| %>
+	<%= render_prompt p %>
 <% end %>

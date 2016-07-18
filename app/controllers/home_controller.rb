@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @questions = get_todos.map{|character, concept| Question.new :perspective, character:character, concept: concept }
+    @prompts = get_todos.map{|character, concept| Prompt.new :perspective, character: character, concept: concept }
   end
 
   private

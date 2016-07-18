@@ -1,7 +1,7 @@
 module CellsHelper
 
-  def render_question(question)
-    content = question.to_html
-    render 'cells/question', content: content, question: question
+  def render_prompt(prompt)
+    content = prompt.to_html
+    render 'cells/prompt', content: content, prompt: prompt
   end
 end

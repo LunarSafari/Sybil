@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>巫女 Sybil</title>
+		<title>巫女</title>
 		<%= csrf_meta_tags %>
 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,10 @@
 
 	<body>
 		<div class="main-content">
+			<header>
+				<%= link_to '角色', characters_path %>
+				<%= link_to '概念', concepts_path %>
+			</header>
 			<%= yield %>
 		</div>
 	</body>

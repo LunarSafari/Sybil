@@ -8,9 +8,19 @@ body {
 
 .main-content {
 	width: 980px;
-	margin: 30px auto;
+	margin: 50px auto;
 	min-height: 600px;
 	background-color: #fffad8;
 	border-radius: 7px;
 	padding: 30px;
+}
+
+header {
+	margin-bottom: 30px;
+}
+
+section {
+	border-bottom: 1px #aaa solid;
+	padding: 15px 0 40px;
+	width: 600px;
 }

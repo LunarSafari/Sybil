@@ -1,4 +1,12 @@
-<%= @character.name %>
-<%= @character.brief %>
+<section>
+	<%= @character.name %>
+	<%= @character.brief %>
 
-<%= link_to 'Edit', edit_character_path(@character) %>
+	<%= link_to 'Edit', edit_character_path(@character) %>
+
+	<div>
+		<%= @character.description %>
+	</div>
+</section>
+
+<%= render 'prompts' %>

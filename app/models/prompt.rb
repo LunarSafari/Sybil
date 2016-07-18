@@ -1,4 +1,4 @@
-class Question
+class Prompt
   include ActionView::Helpers::UrlHelper
   include ApplicationHelper
 
@@ -12,7 +12,7 @@ class Question
     when :perspective
       character = @args[:character]
       concept = @args[:concept]
-      "What is #{wrap_character character}'s perspective of #{wrap_concept concept}?"
+      "#{wrap_character character} 对 #{wrap_concept concept} 的观点是什么？"
     end.html_safe
   end
 
