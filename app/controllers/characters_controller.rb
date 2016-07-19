@@ -7,9 +7,10 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find(params[:id])
     perspectives = @character.perspectives
-    ids = perspectives.pluck(:id)
+    ids = perspectives.pluck(:concept_id)
     unknown = Concept.where.not(id: ids).limit(5)
     @prompts = unknown.map {|concept| Prompt.new :perspective, character: @character, concept: concept }
+    @concepts = Concept.joins(:perspectives).where(perspectives: {character_id: @character.id})
   end
 
   def edit

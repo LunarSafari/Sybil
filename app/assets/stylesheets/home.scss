@@ -20,7 +20,18 @@ header {
 }
 
 section {
-	border-bottom: 1px #aaa solid;
+	border-bottom: 1px #ccc solid;
 	padding: 15px 0 40px;
-	width: 600px;
+}
+
+.left {
+	width: 60%;
+	float: left;
+}
+
+.right {
+	width: 40%;
+	float: left;
+	padding: 0 30px;
+	box-sizing: border-box;
 }

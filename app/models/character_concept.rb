@@ -1,5 +1,8 @@
-class Concept < ApplicationRecord
-  has_many :perspectives
+class CharacterConcept < Concept
+  belongs_to :character, optional: true
+
+  default_scope { preload :character }
+  delegate :name, :description, to: :character
 
 end
 

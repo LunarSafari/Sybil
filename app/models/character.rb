@@ -1,5 +1,10 @@
 class Character < ApplicationRecord
   has_many :perspectives
+  has_one :character_concept
+
+  after_create do
+    build_character_concept.save
+  end
 end
 
 # == Schema Information

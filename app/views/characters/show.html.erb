@@ -1,12 +1,22 @@
-<section>
-	<%= @character.name %>
-	<%= @character.brief %>
+<div class="left">
+	<section>
+		<%= @character.name %>
+		<%= @character.brief %>
 
-	<%= link_to 'Edit', edit_character_path(@character) %>
+		<%= link_to 'Edit', edit_character_path(@character) %>
 
-	<div>
-		<%= @character.description %>
-	</div>
-</section>
-
-<%= render 'prompts' %>
+		<div>
+			<%= @character.description %>
+		</div>
+	</section>
+	<%= render 'prompts' %>
+</div>
+<div class="right">
+	<h5>相关角色</h5>
+	<h5>相关概念</h5>
+	<ul>
+		<% @concepts.each do |concept| %>
+			<li><%= link_to concept.name, concept_path(concept) %></li>
+		<% end %>
+	</ul>
+</div>
