@@ -4,6 +4,9 @@ class CharacterConcept < Concept
   default_scope { preload :character }
   delegate :name, :description, to: :character
 
+  def character_concept?
+    true
+  end
 end
 
 # == Schema Information

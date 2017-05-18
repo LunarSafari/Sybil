@@ -1,10 +1,11 @@
 class ConceptsController < ApplicationController
   def index
-    @concepts = Concept.all
+    @concepts = Concept.not_character.all
   end
 
   def show
     @concept = Concept.find(params[:id])
+    redirect_to character_path(@concept.character) if @concept.character_concept?
   end
 
   def edit

@@ -1,6 +1,11 @@
 class Concept < ApplicationRecord
   has_many :perspectives
 
+  scope :not_character, -> { where('type != ?', 'CharacterConcept') }
+
+  def character_concept?
+    false
+  end
 end
 
 # == Schema Information
