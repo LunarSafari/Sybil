@@ -1,7 +1,7 @@
 class Concept < ApplicationRecord
   has_many :perspectives
 
-  scope :not_character, -> { where('type != ?', 'CharacterConcept') }
+  scope :not_character, -> { where('type is null or type != ?', 'CharacterConcept') }
 
   def character_concept?
     false

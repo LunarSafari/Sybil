@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :perspectives
 
   resources :concepts
+
+  resource :session
 end
