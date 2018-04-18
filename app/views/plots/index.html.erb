@@ -1,0 +1,9 @@
+<ul>
+  <% @plots.each do |plot| %>
+    <li>
+      <%= link_to "##{plot.id} #{plot.name}", plot_path(plot) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New', new_plot_path %>

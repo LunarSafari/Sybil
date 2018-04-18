@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>巫女</title>
-		<%= csrf_meta_tags %>
+  <head>
+    <title>巫女</title>
+    <%= csrf_meta_tags %>
 
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	</head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-	<body>
-		<div class="main-content">
-			<header>
-				<%= link_to '角色', characters_path %>
-				<%= link_to '概念', concepts_path %>
-			</header>
-			<%= yield %>
-		</div>
-	</body>
+  <body>
+    <div class="main-content">
+      <header>
+        <%= link_to '角色', characters_path %>
+        <%= link_to '概念', concepts_path %>
+        <%= link_to '情节', plots_path %>
+      </header>
+      <%= yield %>
+    </div>
+  </body>
 </html>

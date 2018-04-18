@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :concepts
 
   resource :session
+
+  resources :plots
 end
