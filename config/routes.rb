@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resource :session
 
   resources :plots
+
+  resources :worlds
 end

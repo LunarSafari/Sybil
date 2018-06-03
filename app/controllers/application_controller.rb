@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     end
   end
   before_action :require_login
+
+  def current_user
+    @user ||= User.find(session[:user_id])
+  end
 end

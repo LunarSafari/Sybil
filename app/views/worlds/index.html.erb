@@ -1,0 +1,9 @@
+<ul>
+  <% @worlds.each do |world| %>
+    <li>
+      <%= link_to world.name, world_path(world) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New', new_world_path %>
