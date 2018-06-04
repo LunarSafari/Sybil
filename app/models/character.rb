@@ -1,6 +1,7 @@
 class Character < ApplicationRecord
   has_many :perspectives
   has_one :character_concept
+  has_one :world, through: :character_concept
 
   after_create do
     build_character_concept.save

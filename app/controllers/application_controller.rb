@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def current_user
     @user ||= User.find(session[:user_id])
   end
+
+  def load_world
+    @world = World.find(params[:world_id])
+  end
 end

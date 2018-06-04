@@ -1,35 +1,37 @@
 class CharactersController < ApplicationController
+  before_action :load_world
+  layout 'world'
 
   def index
-    @characters = Character.all
+    @characters = @world.characters.all
   end
 
   def show
-    @character = Character.find(params[:id])
+    @character = @world.characters.find(params[:id])
     perspectives = @character.perspectives
     ids = perspectives.pluck(:concept_id)
-    unknown = Concept.where.not(id: ids).limit(5)
+    unknown = @world.concepts.where.not(id: ids).limit(5)
     @prompts = unknown.map {|concept| Prompt.new :perspective, character: @character, concept: concept }
-    @concepts = Concept.joins(:perspectives).where(perspectives: {character_id: @character.id})
+    @concepts = @world.concepts.joins(:perspectives).where(perspectives: {character_id: @character.id})
   end
 
   def edit
-    @character = Character.find(params[:id])
+    @character = @world.characters.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
+    @character = @world.characters.find(params[:id])
     @character.update(character_params)
-    redirect_to character_path(@character)
+    redirect_to world_character_path(@world, @character)
   end
 
   def new
-    @character = Character.new
+    @character = @world.characters.new
   end
 
   def create
-    @character = Character.create(character_params)
-    redirect_to character_path(@character)
+    @character = @world.characters.create(character_params)
+    redirect_to world_character_path(@world, @character)
   end
 
   private

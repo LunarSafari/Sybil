@@ -1,9 +1,0 @@
-<%= @world.name %>
-
-<ul>
-  <% @world.owners.each do |user| %>
-    <li><%= user.name %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Edit', edit_world_path(@world) %>

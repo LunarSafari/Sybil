@@ -3,7 +3,7 @@
 		<%= @character.name %>
 		<%= @character.brief %>
 
-		<%= link_to 'Edit', edit_character_path(@character) %>
+		<%= link_to 'Edit', edit_world_character_path(@world, @character) %>
 
 		<div>
 			<%= @character.description %>
@@ -16,7 +16,7 @@
 	<h5>相关概念</h5>
 	<ul>
 		<% @concepts.each do |concept| %>
-			<li><%= link_to concept.name, concept_path(concept) %></li>
+			<li><%= link_to concept.name, world_concept_path(@world, concept) %></li>
 		<% end %>
 	</ul>
 </div>

@@ -1,4 +1,5 @@
 class Plot < ApplicationRecord
+  belongs_to :world
 end
 
 # == Schema Information
@@ -10,4 +11,5 @@ end
 #  description :text(65535)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  world_id    :integer
 #

@@ -1,5 +1,6 @@
 class Concept < ApplicationRecord
   has_many :perspectives
+  belongs_to :world
 
   scope :not_character, -> { where('type is null or type != ?', 'CharacterConcept') }
 
@@ -19,4 +20,5 @@ end
 #  type         :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  world_id     :integer
 #

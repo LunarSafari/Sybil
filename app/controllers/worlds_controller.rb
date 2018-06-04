@@ -5,6 +5,7 @@ class WorldsController < ApplicationController
 
   def show
     @world = current_user.worlds.find(params[:id])
+    render layout: 'world'
   end
 
   def new
@@ -12,7 +13,9 @@ class WorldsController < ApplicationController
   end
 
   def create
-    @world = World.create(world_params)
+    @world = World.new(world_params)
+    @world.world_ownerships.new(user: current_user, type: :owner)
+    @world.save
     redirect_to world_path(@world)
   end
 

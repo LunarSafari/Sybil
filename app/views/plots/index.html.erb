@@ -1,9 +1,12 @@
 <ul>
   <% @plots.each do |plot| %>
     <li>
-      <%= link_to "##{plot.id} #{plot.name}", plot_path(plot) %>
+      <div>
+        <%= link_to plot.name, world_plot_path(@world, plot) %>
+        <div><%= plot.description %></div>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'New', new_plot_path %>
+<%= link_to 'New', new_world_plot_path(@world) %>

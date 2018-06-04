@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>巫女</title>
+    <title>巫女 | <%= @world.name %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,12 @@
 
   <body>
     <div class="main-content">
+      当前编辑的世界: <%= @world.name %>
+      <header>
+        <%= link_to '角色', world_characters_path(@world) %>
+        <%= link_to '概念', world_concepts_path(@world) %>
+        <%= link_to '情节', world_plots_path(@world) %>
+      </header>
       <%= yield %>
     </div>
   </body>

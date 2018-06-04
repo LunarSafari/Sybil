@@ -1,4 +1,6 @@
 class PerspectivesController < ApplicationController
+  before_action :load_world
+  layout 'world'
 
   def index
     @character = Character.find(params[:character_id])

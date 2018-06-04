@@ -1,10 +1,10 @@
 <ul>
 	<% @characters.each do |c| %>
 		<li>
-			<%= link_to c.name, character_path(c) %>
+			<%= link_to c.name, world_character_path(@world, c) %>
 			<%= c.brief %>
 		</li>
 	<% end %>
 </ul>
 
-<%= link_to 'New', new_character_path %>
+<%= link_to 'New', new_world_character_path(@world) %>

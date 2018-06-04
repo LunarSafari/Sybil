@@ -1,29 +1,32 @@
 class PlotsController < ApplicationController
+  before_action :load_world
+  layout 'world'
+
   def index
-    @plots = Plot.all.order(id: :desc)
+    @plots = @world.plots.all.order(id: :desc)
   end
 
   def show
-    @plot = Plot.find(params[:id])
+    @plot = @world.plots.find(params[:id])
   end
 
   def new
-    @plot = Plot.new
+    @plot = @world.plots.new
   end
 
   def edit
-    @plot = Plot.find(params[:id])
+    @plot = @world.plots.find(params[:id])
   end
 
   def create
-    @plot = Plot.create(plot_params)
-    redirect_to plot_path(@plot)
+    @plot = @world.plots.create(plot_params)
+    redirect_to world_plot_path(@world, @plot)
   end
 
   def update
-    @plot = Plot.find(params[:id])
+    @plot = @world.plots.find(params[:id])
     @plot.update(plot_params)
-    redirect_to plot_path(@plot)
+    redirect_to world_plot_path(@world, @plot)
   end
 
   private

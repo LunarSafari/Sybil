@@ -1,30 +1,33 @@
 class ConceptsController < ApplicationController
+  before_action :load_world
+  layout 'world'
+
   def index
-    @concepts = Concept.not_character.all
+    @concepts = @world.concepts.not_character.all
   end
 
   def show
-    @concept = Concept.find(params[:id])
+    @concept = @world.concepts.find(params[:id])
     redirect_to character_path(@concept.character) if @concept.character_concept?
   end
 
   def edit
-    @concept = Concept.find(params[:id])
+    @concept = @world.concepts.find(params[:id])
   end
 
   def update
-    @concept = Concept.find(params[:id])
+    @concept = @world.concepts.find(params[:id])
     @concept.update(concept_params)
-    redirect_to concept_path(@concept)
+    redirect_to world_concept_path(@world, @concept)
   end
 
   def new
-    @concept = Concept.new
+    @concept = @world.concepts.new
   end
 
   def create
-    @concept = Concept.create(concept_params)
-    redirect_to concept_path(@concept)
+    @concept = @world.concepts.create(concept_params)
+    redirect_to world_concept_path(@world, @concept)
   end
 
   private

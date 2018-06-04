@@ -1,4 +1,4 @@
-<%= form_for @perspective do |f| %>
+<%= form_for [@world, @perspective] do |f| %>
 	<div>
 		<%= f.label :content %>
 		<%= f.text_area :content %>

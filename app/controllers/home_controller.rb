@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @prompts = get_todos.map{|character, concept| Prompt.new :perspective, character: character, concept: concept } rescue []
+    #@prompts = get_todos.map{|character, concept| Prompt.new :perspective, character: character, concept: concept } rescue []
+
+    @worlds = current_user.worlds
   end
 
   private
